@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoTrader Pro - Real-time Cryptocurrency Trading</title>
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iOCIgZmlsbD0idXJsKCNncmFkaWVudDApIi8+CjxwYXRoIGQ9Ik04IDE2TDE2IDhMMjQgMTZMMTYgMjRMOCAxNloiIGZpbGw9IndoaXRlIi8+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWRpZW50MCIgeDE9IjAiIHkxPSIwIiB4Mj0iMzIiIHkyPSIzMiIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjM0I4MkY2Ii8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzYzNjZGMSIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+Cjwvc3ZnPgo=">
+    <meta name="description" content="CryptoTrader Pro - A modern cryptocurrency trading platform built for Azure Static Web Apps. Real-time market data, interactive charts, and portfolio management.">
+    <meta name="keywords" content="cryptocurrency, trading, bitcoin, ethereum, azure, static web app, portfolio management">
+    <meta name="author" content="CryptoTrader Pro">
+    <meta property="og:title" content="CryptoTrader Pro - Cryptocurrency Trading Platform">
+    <meta property="og:description" content="Real-time cryptocurrency trading with live market data, interactive charts, and portfolio management.">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="logo">
+                    <i class="fas fa-chart-line"></i>
+                    <span>CryptoTrader Pro</span>
+                </div>
+                <nav class="nav">
+                    <a href="#dashboard" class="nav-link active">Dashboard</a>
+                    <a href="#portfolio" class="nav-link">Portfolio</a>
+                    <a href="#markets" class="nav-link">Markets</a>
+                    <a href="#settings" class="nav-link">Settings</a>
+                </nav>
+                <div class="user-actions">
+                    <button class="btn btn-outline">
+                        <i class="fas fa-wallet"></i>
+                        Balance: $10,000.00
+                    </button>
+                    <button class="btn btn-primary">
+                        <i class="fas fa-user"></i>
+                        Profile
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="container">
+                <!-- Market Overview -->
+                <section class="market-overview">
+                    <h2>Market Overview</h2>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3>Total Market Cap</h3>
+                                <p class="stat-value" id="total-market-cap">Loading...</p>
+                                <span class="stat-change positive" id="market-cap-change">+2.34%</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-coins"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3>Active Cryptocurrencies</h3>
+                                <p class="stat-value" id="active-cryptos">Loading...</p>
+                                <span class="stat-change neutral">24h Volume</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-fire"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3>Bitcoin Dominance</h3>
+                                <p class="stat-value" id="btc-dominance">Loading...</p>
+                                <span class="stat-change negative" id="btc-dominance-change">-0.12%</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Trading Interface -->
+                <section class="trading-section">
+                    <div class="trading-grid">
+                        <!-- Price Chart -->
+                        <div class="chart-container">
+                            <div class="chart-header">
+                                <h3>Price Chart</h3>
+                                <div class="chart-controls">
+                                    <select id="crypto-selector" class="crypto-select">
+                                        <option value="bitcoin">Bitcoin (BTC)</option>
+                                        <option value="ethereum">Ethereum (ETH)</option>
+                                        <option value="cardano">Cardano (ADA)</option>
+                                        <option value="solana">Solana (SOL)</option>
+                                        <option value="polkadot">Polkadot (DOT)</option>
+                                    </select>
+                                    <div class="timeframe-buttons">
+                                        <button class="timeframe-btn active" data-timeframe="1H">1H</button>
+                                        <button class="timeframe-btn" data-timeframe="4H">4H</button>
+                                        <button class="timeframe-btn" data-timeframe="1D">1D</button>
+                                        <button class="timeframe-btn" data-timeframe="1W">1W</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="chart-placeholder">
+                                <canvas id="price-chart"></canvas>
+                            </div>
+                        </div>
+
+                        <!-- Trading Panel -->
+                        <div class="trading-panel">
+                            <div class="trading-tabs">
+                                <button class="tab-btn active" data-tab="buy">Buy</button>
+                                <button class="tab-btn" data-tab="sell">Sell</button>
+                            </div>
+                            
+                            <div class="tab-content active" id="buy-tab">
+                                <form class="trading-form">
+                                    <div class="form-group">
+                                        <label for="buy-order-type">Order Type</label>
+                                        <select class="form-control" id="buy-order-type">
+                                            <option>Market Order</option>
+                                            <option>Limit Order</option>
+                                            <option>Stop-Loss</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="buy-amount">Amount (USD)</label>
+                                        <input type="number" class="form-control" placeholder="0.00" id="buy-amount">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="buy-price">Price per Coin</label>
+                                        <input type="number" class="form-control" placeholder="Current market price" id="buy-price" readonly>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="estimated-coins">Estimated Coins</label>
+                                        <input type="number" class="form-control" placeholder="0.00000000" id="estimated-coins" readonly>
+                                    </div>
+                                    <button type="submit" class="btn btn-success btn-full">
+                                        <i class="fas fa-arrow-up"></i>
+                                        Buy Cryptocurrency
+                                    </button>
+                                </form>
+                            </div>
+
+                            <div class="tab-content" id="sell-tab">
+                                <form class="trading-form">
+                                    <div class="form-group">
+                                        <label for="sell-order-type">Order Type</label>
+                                        <select class="form-control" id="sell-order-type">
+                                            <option>Market Order</option>
+                                            <option>Limit Order</option>
+                                            <option>Stop-Loss</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="sell-amount">Amount (Coins)</label>
+                                        <input type="number" class="form-control" placeholder="0.00000000" id="sell-amount">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="sell-price">Price per Coin</label>
+                                        <input type="number" class="form-control" placeholder="Current market price" id="sell-price" readonly>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="estimated-usd">Estimated USD</label>
+                                        <input type="number" class="form-control" placeholder="0.00" id="estimated-usd" readonly>
+                                    </div>
+                                    <button type="submit" class="btn btn-danger btn-full">
+                                        <i class="fas fa-arrow-down"></i>
+                                        Sell Cryptocurrency
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Market Data Table -->
+                <section class="market-data">
+                    <div class="section-header">
+                        <h3>Top Cryptocurrencies</h3>
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Search cryptocurrencies..." id="crypto-search">
+                        </div>
+                    </div>
+                    <div class="table-container">
+                        <table class="crypto-table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Name</th>
+                                    <th>Price</th>
+                                    <th>24h Change</th>
+                                    <th>Market Cap</th>
+                                    <th>Volume (24h)</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="crypto-table-body">
+                                <!-- Dynamic content will be inserted here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Portfolio Section -->
+                <section class="portfolio-section" style="display: none;">
+                    <h3>Your Portfolio</h3>
+                    <div class="portfolio-grid">
+                        <div class="portfolio-card">
+                            <h4>Total Portfolio Value</h4>
+                            <p class="portfolio-value">$8,523.45</p>
+                            <span class="portfolio-change positive">+12.34%</span>
+                        </div>
+                        <div class="portfolio-holdings">
+                            <h4>Holdings</h4>
+                            <div id="portfolio-holdings">
+                                <!-- Portfolio holdings will be populated here -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Loading Overlay -->
+        <div class="loading-overlay" id="loading-overlay">
+            <div class="loading-spinner">
+                <i class="fas fa-spinner fa-spin"></i>
+                <p>Loading market data...</p>
+            </div>
+        </div>
+
+        <!-- Toast Notifications -->
+        <div class="toast-container" id="toast-container"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

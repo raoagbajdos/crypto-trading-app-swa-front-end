@@ -1,0 +1,9 @@
+{
+  "$schema": "https://aka.ms/azure/static-web-apps-cli/schema",
+  "configurations": {
+    "azure-static-web-app-crypto-trading-app": {
+      "appLocation": ".",
+      "outputLocation": "."
+    }
+  }
+}
